@@ -27,7 +27,7 @@
 
 (defun make-random-bytes (length)
   (let ((seq (make-array length :element-type '(unsigned-byte 8))))
-    (with-input-from-file (r #P"/dev/random" :element-type '(unsigned-byte 8))
+    (with-open-file (r #P"/dev/random" :element-type '(unsigned-byte 8))
       (read-sequence seq r))
     seq))
 
