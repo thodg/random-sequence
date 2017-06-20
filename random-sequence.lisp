@@ -21,7 +21,7 @@
 (defpackage :random-sequence
   (:use :common-lisp)
   (:export #:make-random-bytes
-	   #:make-random-string))
+           #:make-random-string))
 
 (in-package :random-sequence)
 
@@ -33,6 +33,6 @@
 
 (defun make-random-string (length)
   (subseq (cl-base64:usb8-array-to-base64-string (make-random-bytes
-						  (ceiling length 4/3))
-						 :uri t)
-	  0 length))
+                                                  (ceiling length 4/3))
+                                                 :uri t)
+          0 length))
